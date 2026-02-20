@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+ # Online Book Store
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Proposal
 
-## Available Scripts
+### Project Idea & Purpose
+Online Book Store is a Single Page Application (SPA) built with React. The purpose of this project is to provide users with a simple and user-friendly platform to browse and explore books online. The application demonstrates the core concepts of React including components, JSX, and SPA architecture.
 
-In the project directory, you can run:
+### Target Audience
+The target audience includes students, book lovers, and online shoppers who prefer browsing books digitally. It is especially useful for university students searching for academic or fiction books.
 
-### `npm start`
+### Problem the Application Solves
+Many users visit multiple websites to find books and compare options. This application centralizes book browsing in one clean interface, providing a structured and organized experience.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Minimum Viable Product (MVP) Features
+- Display a homepage
+- Header, Main Content, and Footer components
+- Basic layout with styling
+- Organized project structure
+- Functional React components
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## SPA Theory Questions
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### What is a Single Page Application (SPA)?
+A Single Page Application (SPA) is a web application that loads a single HTML page and dynamically updates content without reloading the entire page. Instead of requesting new pages from the server, the application updates only the necessary components using JavaScript. This provides a faster and smoother user experience.
 
-### `npm run build`
+### How does SPA differ from a traditional Multi-Page Application (MPA)?
+In a Multi-Page Application (MPA), each user action requires loading a new HTML page from the server, which causes full page reloads. In contrast, a SPA updates the content dynamically without refreshing the page. SPAs offer better performance and a more app-like user experience.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### What is the Virtual DOM?
+The Virtual DOM is a lightweight copy of the real DOM. React uses it to compare changes between updates and efficiently update only the parts of the real DOM that have changed. This improves performance and makes rendering faster.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Why does React use a component-based architecture?
+React uses a component-based architecture to improve code organization, reusability, and maintainability. Each part of the interface is separated into independent components, making development easier and more structured.
