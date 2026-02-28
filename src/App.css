@@ -54,3 +54,49 @@ footer {
   text-align: center;
   font-size: 14px;
 }
+
+nav {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 20px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+input {
+  padding: 10px;
+  margin: 20px 0;
+  width: 250px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: 'Poppins', sans-serif;
+}
+
+.book-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px;
+}
+
+button {
+  padding: 8px 15px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+button:hover {
+  background: #5563c1;
+  transform: scale(1.05);
+  transition: 0.2s ease;
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}

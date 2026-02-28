@@ -1,9 +1,11 @@
-import MainContent from "../components/MainContent";
+import SearchBar from "../components/SearchBar";
+import BookList from "../components/BookList";
 
 function Home() {
   return (
-    <div>
-      <MainContent />
+    <div className="container">
+      <SearchBar />
+      <BookList />
     </div>
   );
 }
