@@ -1,7 +1,15 @@
 function Navbar() {
+   const links = ["Home", "Books", "About", "Contact"];
+ 
   return (
-    <nav style={{ padding: "15px", backgroundColor: "#333", color: "white" }}>
-      <h3>Book Store</h3>
+    <nav>
+      <ul className="nav-list">
+        {links.map((link) => (
+          <li key={link}>
+            <a href="#" className="nav-link">{link}</a>
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 }

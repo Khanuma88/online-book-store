@@ -1,12 +1,9 @@
-function Button({ text, onClick }) {
+function Button({ text, onClick, disabled = false, variant = "primary" }) {
   return (
     <button
       onClick={onClick}
-      style={{
-        padding: "8px 12px",
-        marginTop: "10px",
-        cursor: "pointer",
-      }}
+     disabled={disabled}
+      className={variant === "danger" ? "btn-danger" : variant === "secondary" ? "btn-secondary" : ""}
     >
       {text}
     </button>

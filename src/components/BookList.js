@@ -1,19 +1,30 @@
 import BookCard from "./BookCard";
 
-function BookList() {
-  const books = [
-    { id: 1, title: "React Basics", author: "John Smith" },
-    { id: 2, title: "JavaScript Guide", author: "Anna Brown" },
-    { id: 3, title: "Web Development", author: "Mike Johnson" },
-  ];
-
+function BookList({ books, cart, onAddToCart, onDelete }) {
+  if (books.length === 0) {
+    return (
+      <div className="empty-state">
+        <div className="empty-icon">📭</div>
+        <p>No books found. Try a different search or add a new book!</p>
+      </div>
+    );
+  }
+ 
   return (
-    <div>
-      {books.map((book) => (
+    <div className="book-list">
+      {books.map(({ id, title, author, genre, price, rating, available }) => (
         <BookCard
-          key={book.id}
-          title={book.title}
-          author={book.author}
+          key={id}
+          id={id}
+          title={title}
+          author={author}
+          genre={genre}
+          price={price}
+          rating={rating}
+          available={available}
+          inCart={cart.some((b) => b.id === id)}
+          onAddToCart={onAddToCart}
+          onDelete={onDelete}
         />
       ))}
     </div>
