@@ -4,6 +4,10 @@ import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import About from "./pages/About";
+import Books from "./pages/Books";
+import Contact from "./pages/Contact";
+import { Routes, Route } from "react-router-dom";
 
 const initialBooks = [
   { id: 1, title: "React Basics", author: "John Smith", genre: "Programming", price: 12.99, rating: 4.5, available: true },
@@ -15,18 +19,8 @@ const initialBooks = [
 ];
 
 function App() {
-  const [books, setBooks] = useState(initialBooks);
+  const [books] = useState(initialBooks);
   const [cart, setCart] = useState([]);
-
-  const addBook = (newBook) => {
-    const book = { ...newBook, id: Date.now() };
-    setBooks((prev) => [...prev, book]);
-  };
-
-  const deleteBook = (id) => {
-    setBooks((prev) => prev.filter((b) => b.id !== id));
-    setCart((prev) => prev.filter((b) => b.id !== id));
-  };
 
   const addToCart = (book) => {
     setCart((prev) => {
@@ -41,16 +35,28 @@ function App() {
 
   return (
     <div>
-      <Header cartCount={cart.length} />
+      <Header />
       <Navbar />
-      <Home
-        books={books}
-        cart={cart}
-        onAddBook={addBook}
-        onDeleteBook={deleteBook}
-        onAddToCart={addToCart}
-        onRemoveFromCart={removeFromCart}
-      />
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              books={books}
+              cart={cart}
+              onAddToCart={addToCart}
+              onRemoveFromCart={removeFromCart}
+            />
+          }
+        />
+        <Route path="/about" element={<About />} />
+        <Route path="/books" element={<Books books={books} cart={cart} onAddToCart={addToCart} />}>
+          <Route path="details" element={<h3>Book Details coming soon!</h3>} />
+        </Route>
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+
       <Footer />
     </div>
   );

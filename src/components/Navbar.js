@@ -1,15 +1,13 @@
+import { Link } from "react-router-dom";
+
 function Navbar() {
-   const links = ["Home", "Books", "About", "Contact"];
- 
   return (
     <nav>
-      <ul className="nav-list">
-        {links.map((link) => (
-          <li key={link}>
-            <a href="#" className="nav-link">{link}</a>
-          </li>
-        ))}
-      </ul>
+      <Link to="/">Home</Link> | 
+      <Link to="/books">Books</Link> | 
+      <Link to="/books/details">Details</Link> | 
+      <Link to="/about">About</Link> | 
+      <Link to="/contact">Contact</Link>
     </nav>
   );
 }

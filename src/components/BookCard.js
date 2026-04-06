@@ -1,6 +1,6 @@
 import Button from "./Button";
 
-function BookCard({ id, title, author, genre, price, rating, available, inCart, onAddToCart, onDelete }) {
+function BookCard({ id, title, author, genre, price, rating, available, inCart, onAddToCart }) {
   const stars = "★".repeat(Math.round(rating)) + "☆".repeat(5 - Math.round(rating));
 
   const handleAddToCart = () => {
@@ -25,7 +25,6 @@ function BookCard({ id, title, author, genre, price, rating, available, inCart, 
           onClick={handleAddToCart}
           disabled={!available || inCart}
         />
-        <Button text="Delete" onClick={() => onDelete(id)} variant="danger" />
       </div>
     </div>
   );

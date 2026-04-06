@@ -1,21 +1,17 @@
 import { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import BookList from "../components/BookList";
-import AddBookForm from "../components/AddBookForm";
 import StatsBlock from "../components/StatsBlock";
 import CartPanel from "../components/CartPanel";
 
-function Home({ books, cart, onAddBook, onDeleteBook, onAddToCart, onRemoveFromCart }) {
+function Home({ books, cart, onAddToCart, onRemoveFromCart }) {
   const [search, setSearch] = useState("");
   const [genre, setGenre] = useState("");
   const [sortBy, setSortBy] = useState("default");
-  const [showForm, setShowForm] = useState(false);
-  const [showCart, setShowCart] = useState(false);
+  const [showCart, setShowCart] = useState(false);  // ← добавила сюда
 
   const genres = books.reduce((acc, book) => {
-    if (!acc.includes(book.genre)) {
-      return [...acc, book.genre];
-    }
+    if (!acc.includes(book.genre)) return [...acc, book.genre];
     return acc;
   }, []);
 
@@ -27,40 +23,26 @@ function Home({ books, cart, onAddBook, onDeleteBook, onAddToCart, onRemoveFromC
     return matchSearch && matchGenre;
   });
 
-  if (sortBy === "price-asc") {
-    filteredBooks = [...filteredBooks].sort((a, b) => a.price - b.price);
-  } else if (sortBy === "price-desc") {
-    filteredBooks = [...filteredBooks].sort((a, b) => b.price - a.price);
-  } else if (sortBy === "rating") {
-    filteredBooks = [...filteredBooks].sort((a, b) => b.rating - a.rating);
-  } else if (sortBy === "title") {
-    filteredBooks = [...filteredBooks].sort((a, b) => a.title.localeCompare(b.title));
-  }
-
-  const handleAddBook = (newBook) => {
-    onAddBook(newBook);
-    setShowForm(false);
-  };
+  if (sortBy === "price-asc") filteredBooks = [...filteredBooks].sort((a, b) => a.price - b.price);
+  else if (sortBy === "price-desc") filteredBooks = [...filteredBooks].sort((a, b) => b.price - a.price);
+  else if (sortBy === "rating") filteredBooks = [...filteredBooks].sort((a, b) => b.rating - a.rating);
+  else if (sortBy === "title") filteredBooks = [...filteredBooks].sort((a, b) => a.title.localeCompare(b.title));
 
   return (
     <div className="container">
-      <div className="hero">
+      <div className="hero">                        {/* ← только один hero */}
         <h2>Welcome to our Book Store</h2>
         <p>Browse our collection of amazing books.</p>
         <div className="hero-actions">
-          <button onClick={() => setShowForm(!showForm)}>
-            {showForm ? "✕ Close" : "Add Book"}
-          </button>
           <button className="btn-secondary" onClick={() => setShowCart(!showCart)}>
             {showCart ? "✕ Close Cart" : `Cart (${cart.length})`}
           </button>
         </div>
       </div>
 
-      <StatsBlock books={books} cart={cart} />
-
-      {showForm && <AddBookForm onAddBook={handleAddBook} />}
       {showCart && <CartPanel cart={cart} onRemove={onRemoveFromCart} />}
+
+      <StatsBlock books={books} cart={cart} />
 
       <SearchBar
         search={search}
@@ -80,7 +62,6 @@ function Home({ books, cart, onAddBook, onDeleteBook, onAddToCart, onRemoveFromC
         books={filteredBooks}
         cart={cart}
         onAddToCart={onAddToCart}
-        onDelete={onDeleteBook}
       />
     </div>
   );

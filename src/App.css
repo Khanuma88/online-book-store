@@ -409,6 +409,23 @@ footer {
   font-weight: 300;
 }
 
+nav {
+  background: #1e1e2f;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #667eea;
+}
+
 @media (max-width: 600px) {
   header { flex-direction: column; gap: 10px; text-align: center; }
   .hero h2 { font-size: 22px; }
