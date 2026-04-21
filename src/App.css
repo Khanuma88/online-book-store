@@ -433,3 +433,49 @@ nav a:hover {
   .book-list { grid-template-columns: 1fr; }
   .stats-block { grid-template-columns: repeat(2, 1fr); }
 }
+
+body.dark {
+  background: #1a1a2e;
+  color: #e0e0e0;
+}
+
+body.dark header {
+  background: linear-gradient(135deg, #2d2d44, #1a1a2e);
+}
+
+body.dark nav {
+  background: #16213e;
+}
+
+body.dark .book-card {
+  background: #2d2d44;
+  color: #e0e0e0;
+}
+
+body.dark .book-card h4 {
+  color: #e0e0e0;
+}
+
+body.dark .stat-card {
+  background: #2d2d44;
+  color: #e0e0e0;
+}
+
+body.dark .search-bar {
+  background: #2d2d44;
+}
+
+body.dark .search-input,
+body.dark .filter-select {
+  background: #1a1a2e;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+body.dark .cart-panel {
+  background: #2d2d44;
+}
+
+body.dark footer {
+  background: #0f0f1a;
+}
