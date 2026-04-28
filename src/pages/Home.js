@@ -12,7 +12,6 @@ function Home({ books, cart, onAddToCart, onRemoveFromCart, onAddBook, onDeleteB
   const [showCart, setShowCart] = useState(false);
   const [showForm, setShowForm] = useState(false);
 
-  // useMemo — пересчитывает только когда меняется books
   const genres = useMemo(() => {
     return books.reduce((acc, book) => {
       if (!acc.includes(book.genre)) return [...acc, book.genre];
