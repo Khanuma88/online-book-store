@@ -1,11 +1,7 @@
 import Button from "./Button";
 
-function BookCard({ id, title, author, genre, price, rating, available, inCart, onAddToCart }) {
+function BookCard({ id, title, author, genre, price, rating, available, inCart, onAddToCart, onDelete, isAdmin }) {
   const stars = "★".repeat(Math.round(rating)) + "☆".repeat(5 - Math.round(rating));
-
-  const handleAddToCart = () => {
-    onAddToCart({ id, title, author, genre, price, rating, available });
-  };
 
   return (
     <div className={`book-card ${!available ? "unavailable" : ""}`}>
@@ -22,9 +18,12 @@ function BookCard({ id, title, author, genre, price, rating, available, inCart, 
       <div className="book-card-actions">
         <Button
           text={inCart ? "✓ In Cart" : "Add to Cart"}
-          onClick={handleAddToCart}
+          onClick={() => onAddToCart({ id, title, author, genre, price, rating, available })}
           disabled={!available || inCart}
         />
+        {isAdmin && onDelete && (
+          <Button text="Delete" onClick={() => onDelete(id)} variant="danger" />
+        )}
       </div>
     </div>
   );
