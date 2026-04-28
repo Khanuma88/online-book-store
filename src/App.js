@@ -26,14 +26,12 @@ function App() {
   const [error, setError] = useState(null);
   const [cart, setCart] = useLocalStorage("cart", []);
 
-  // загружаем книги из API при старте
   useEffect(() => {
     const fetchBooks = async () => {
       try {
         setLoading(true);
         const data = await getBooks();
         if (data.length === 0) {
-          // если API пустой — добавляем начальные книги
           const initialBooks = [
             { title: "React Basics", author: "John Smith", genre: "Programming", price: 12.99, rating: 4.5, available: true },
             { title: "JavaScript Guide", author: "Anna Brown", genre: "Programming", price: 10.99, rating: 4.8, available: true },
